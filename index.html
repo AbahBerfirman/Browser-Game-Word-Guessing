@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kuis Cepat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container" id="app">
+    <header>
+      <h1>Kuis Cepat</h1>
+      <p class="subtitle">Jawab sebanyak mungkin soal dalam waktu!</p>
+    </header>
+
+    <section id="start-screen" class="card">
+      <label for="playerName">Nama pemain</label>
+      <input id="playerName" placeholder="Masukkan nama..." />
+      <div class="controls">
+        <label for="numQs">Jumlah soal</label>
+        <select id="numQs">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="15">15</option>
+        </select>
+        <button id="startBtn">Mulai Kuis</button>
+      </div>
+    </section>
+
+    <section id="quiz-screen" class="card hidden" aria-live="polite">
+      <div class="top-row">
+        <div>Nama: <span id="playerDisplay"></span></div>
+        <div>Skor: <span id="score">0</span></div>
+      </div>
+
+      <div id="questionBox">
+        <div class="meta">
+          <span id="qIndex">1</span>/<span id="qTotal">10</span>
+          <div class="timer">Waktu: <span id="timer">15</span>s</div>
+        </div>
+
+        <h2 id="questionText">Pertanyaan muncul di sini</h2>
+        <div id="answers" class="answers" role="list"></div>
+        <div class="feedback" id="feedback" aria-live="assertive"></div>
+
+        <div class="controls">
+          <button id="nextBtn" class="secondary hidden">Soal berikutnya</button>
+          <button id="quitBtn" class="danger">Keluar</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="end-screen" class="card hidden">
+      <h2>Hasil</h2>
+      <p><strong id="finalScore">0</strong> poin</p>
+      <p id="summary"></p>
+      <div class="controls">
+        <button id="restartBtn">Main Lagi</button>
+        <a id="downloadResults" href="#" download="kuis-hasil.txt" class="secondary">Unduh Hasil</a>
+      </div>
+    </section>
+
+    <footer>
+      <small>Game sederhana — dibuat dengan HTML/CSS/JS</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
